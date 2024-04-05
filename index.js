@@ -20,6 +20,7 @@ const titleCased = () => {
       let initialFirstLetter = word.slice(0,1);
       console.log(initialFirstLetter)
       let capitaizedFirstLetter = initialFirstLetter.toUpperCase();      
+      // Explore the option of word.charAt(0).toUpperCase()
       console.log(capitaizedFirstLetter)
       console.log(word.replace(initialFirstLetter, capitaizedFirstLetter))
       return word.replace(initialFirstLetter, capitaizedFirstLetter)
