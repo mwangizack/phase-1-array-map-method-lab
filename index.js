@@ -12,5 +12,25 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  tutorials.map(element => {
+    const titleArray = element.split(' ');
+    console.log(titleArray)
+
+    titleArray.map(word => {
+      let initialFirstLetter = word.slice(0,1);
+      console.log(initialFirstLetter)
+      let capitaizedFirstLetter = initialFirstLetter.toUpperCase();      
+      console.log(capitaizedFirstLetter)
+      console.log(word.replace(initialFirstLetter, capitaizedFirstLetter))
+      return word.replace(initialFirstLetter, capitaizedFirstLetter)
+    })
+
+    // console.log(titleArray.toString())
+    // return titleArray.toString();
+  })
+
+  // console.log(tutorials)
+  // return tutorials;
 }
+
+titleCased()
