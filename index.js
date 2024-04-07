@@ -1,37 +1,35 @@
 const tutorials = [
-  'what does the this keyword mean?',
-  'What is the Constructor OO pattern?',
-  'implementing Blockchain Web API',
-  'The Test Driven Development Workflow',
-  'What is NaN and how Can we Check for it',
-  'What is the difference between stopPropagation and preventDefault?',
-  'Immutable State and Pure Functions',
-  'what is the difference between == and ===?',
-  'what is the difference between event capturing and bubbling?',
-  'what is JSONP?'
+  "what does the this keyword mean?",
+  "What is the Constructor OO pattern?",
+  "implementing Blockchain Web API",
+  "The Test Driven Development Workflow",
+  "What is NaN and how Can we Check for it",
+  "What is the difference between stopPropagation and preventDefault?",
+  "Immutable State and Pure Functions",
+  "what is the difference between == and ===?",
+  "what is the difference between event capturing and bubbling?",
+  "what is JSONP?",
 ];
 
 const titleCased = () => {
-  tutorials.map(element => {
-    const titleArray = element.split(' ');
-    console.log(titleArray)
+  // Break down the tutorials array to arrays of titles
+  let tutorialsTitleCased = tutorials.map((element) => {
+    const titleArray = element.split(" ");
 
-    titleArray.map(word => {
-      let initialFirstLetter = word.slice(0,1);
-      console.log(initialFirstLetter)
-      let capitaizedFirstLetter = initialFirstLetter.toUpperCase();      
-      // Explore the option of word.charAt(0).toUpperCase()
-      console.log(capitaizedFirstLetter)
-      console.log(word.replace(initialFirstLetter, capitaizedFirstLetter))
-      return word.replace(initialFirstLetter, capitaizedFirstLetter)
-    })
+    // Go into each title array and capitalize the first character of each element
+    let capitalizedWord = titleArray.map((word) => {
+      let capitalizedFirstLetter = word.charAt(0).toUpperCase();
+      let remainderString = word.slice(1);
+      return capitalizedFirstLetter + remainderString;
+    });
 
-    // console.log(titleArray.toString())
-    // return titleArray.toString();
-  })
+    // console.log(capitalizedWord);
+    // Rejoin the arrays of titles into a string of the full title
+    return capitalizedWord.join(" ");
+  });
 
-  // console.log(tutorials)
-  // return tutorials;
-}
+  console.log(tutorialsTitleCased);
+  return tutorialsTitleCased;
+};
 
-titleCased()
+titleCased();
